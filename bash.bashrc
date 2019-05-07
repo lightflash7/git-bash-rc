@@ -113,5 +113,12 @@ gcl(){
 gch(){
 	git checkout $1
 }
-
-
+grea(){
+	git remote add $*
+}
+gres(){
+	git remote show $1
+}
+gps(){
+	git push $*
+}
