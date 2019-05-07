@@ -99,10 +99,10 @@ ga(){
 	git add $*
 }
 gco(){
-	git commit -m \'$1\'
+	git commit -m \'"$1"\'
 }
 grc(){
-	git commit --amend -m \'$1\'
+	git commit --amend -m \'"$1"\'
 }
 grs(){
 	git reset --hard $1
@@ -121,4 +121,7 @@ gres(){
 }
 gps(){
 	git push $*
+}
+grm(){
+	git rm --cached $*
 }
