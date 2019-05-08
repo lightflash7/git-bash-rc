@@ -86,9 +86,22 @@ alias mygitconfig='vim ~/.gitconfig'
 
 #终端命令配置
 alias clc='clear'
+  #防止cat读取gbk乱码
+catg(){
+	cat $1 | iconv -f GBK
+}
+
+
+
+
+
 
 #给git的别名配置，m开头是自己用的
 alias mgl='git log --graph --pretty=format:"%h**************************%s******************************%cd"'
+
+
+
+#git基础配置
 alias gi='git init'
 alias gs='git status'
 alias gl='git log'
@@ -124,4 +137,9 @@ gps(){
 }
 grm(){
 	git rm --cached $*
+}
+gdg(){
+	git config --global core.quotepath true
+	git diff | iconv -f gbk
+	git config --global core.quotepath false
 }
